@@ -1,0 +1,64 @@
+Project Name: GROUP 1 Profiling System
+Loaction: Magcalon, San Jose, Antique 5700
+By: Group 1
+Technologies:
+  - ReactJS - for frontend development
+  - Material(including MaterializeCSS & Material Icons) - for UI design
+  - Bun.js - serving as server-side Javasript runtime environment
+  - Vite - for frontend development tooling
+  - MariaDB (NPM) - server as a driver or middleware for fecthing and query MariaDB SQL.
+Databases: PROFILE_MAGCALON
+Tables:
+  - Account - composed of 3 account types; system admin, admin and user (pre create)
+  - Profiles - contains a list of information of residents living in the village/barangay
+  
+  ACCOUNT TABLE
+  - Account ID
+  - Account Name
+  - Account Password
+  - Account Type
+  - Account Created
+  
+  RESIDENT TABLE
+  - Resident ID
+  - Resident First name
+  - Resident Middle name
+  - Resident Last Name
+  - Resident Age
+  - Resident Birthday
+  - Resident Sex
+  - Resident Occupation
+  - Resident Civil Status
+  
+  PUROK TABLE
+  - Purok ID
+  - Purok Name
+  
+  TRANSACTION TABLE
+  - Transaction ID
+  - Transaction Code
+  - Transaction Date
+  - Transaction Name
+  - Transaction Payment
+  
+  REQUEST TABLE
+  - Request ID
+  - Request Name
+  - Request Status
+  - Request Date
+    
+    - Barangay
+    FIELD_NAME		VALUES
+    ---------------------------               
+    Population		1100
+    Income				230000
+Pages:
+  - Login
+  - System Admin Panel
+  - Admin Panel
+  - Dashboard
+  - Account Management
+  - Profile Registration
+  - Profile Lists
+  - Profile Page
+  - About
