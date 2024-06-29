@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-import AddResident from './components/AddResident.jsx';
+import AddResident from './Actions/AddResident.jsx';
 
 import {
   Button,
