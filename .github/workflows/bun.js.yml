@@ -1,7 +1,7 @@
-name: my-workflow
+name: bis_magcalon
 jobs:
   my-job:
-    name: my-job
+    name: Bun.js Runner
     runs-on: ubuntu-latest
     steps:
       # ...
@@ -10,4 +10,4 @@ jobs:
 
       # run any `bun` or `bunx` command
       - run: bun install
-      - run: bun run vite --dev  
+      - run: bun run vite -- dev  
