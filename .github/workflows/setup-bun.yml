@@ -13,4 +13,3 @@ jobs:
 
             - run: bun install
             - run: bun run vite build
-            - run: cd ./dist
