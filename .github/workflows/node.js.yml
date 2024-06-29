@@ -1,7 +1,7 @@
 # This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
 # For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-nodejs
 
-name: Bun.jd
+name: BIS Runner
 
 on:
   push:
@@ -16,15 +16,15 @@ jobs:
 
     strategy:
       matrix:
-        bun-version: [1.1]
+        node-version: [18.x.x]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
     - uses: actions/checkout@v4
-    - name: Use Node.js ${{ matrix.bun-version }}
+    - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v3
       with:
-        node-version: ${{ matrix.bun-version }}
+        node-version: ${{ matrix.node-version }}
         cache: 'bun'
     - run: bun ci
     - run: bun run vite -- dev
