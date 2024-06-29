@@ -12,5 +12,4 @@ jobs:
             - uses: oven-sh/setup-bun@v1
 
             - run: bun install
-            - run: cd api
-            - run: bun run server.js
+            - run: bun run vite --host -- dev open
