@@ -4,7 +4,7 @@ import {
   GetDate,
   Input,
   Page
-}
+} from '../../.././lib';
 
 export function AddResident() {
   return(
