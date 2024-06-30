@@ -4,11 +4,11 @@ name: Bun Application Workflowon:
             main
 jobs:
     bun-jobs:
-        name: Building System
+        name: Running a system   
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v4
             - uses: oven-sh/setup-bun@v1
 
             - run: bun install
-            - run: bun run vite build
+            - run: bun run vite -- dev
