@@ -9,4 +9,4 @@ jobs:
         name: Creating artifact
         runs-on: ubuntu-latest
         steps:
-            - run: zip bis.zip
+            - run: zip *
