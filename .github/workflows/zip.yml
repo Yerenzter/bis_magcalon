@@ -1,0 +1,12 @@
+name: Artifact Creation of System (zip)
+on:
+    push:
+        branches:
+            main
+
+jobs:
+    bun-jobs:
+        name: Creating artifact
+        runs-on: ubuntu-latest
+        steps:
+            - run: zip *
