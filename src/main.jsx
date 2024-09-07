@@ -1,16 +1,12 @@
-/* IMPORT REACT LIBRARIES */
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-
-/* IMPORT APP ROUTER */
 import { App } from './routers'
-
-/* IMPORT THIRD PARTY LIBRARIES */
-import './lib'
 import './index.css'
+import './lib';
+import "./css";
 
-ReactDOM.createRoot(document.querySelector('#root')).render(
+ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <App />
-  </React.StrictMode>
-);
+  </React.StrictMode>,
+)

@@ -1,0 +1,14 @@
+.pop:hover {
+    transform: scale(1.1000);
+    transition: all 0.5s;
+}
+
+.pop:not(.pop:hover) {
+    transform: scale(1);
+    transition: all 0.2s;
+}
+
+.pop:active {
+    transform: scale(0.9);
+    transition: all 0.2s;
+}

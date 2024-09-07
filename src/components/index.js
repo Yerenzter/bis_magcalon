@@ -1,11 +1,27 @@
-/* IMPORT COMPONENTS */
-import Admin from './Admin.jsx';
-import Home from './Home.jsx';
-import Login from './Login.jsx';
-import Personnel from './Personnel.jsx';
-import System from './System.jsx';
+import Home from "./Home";
+import Dashboard from "./Dashboard";
+import Registration from "./Registration";
+import Management from "./Management";
+import Notifications from "./Notifications";
+import Help from "./Help";
+import Settings from "./Settings";
+import RegisterResident from "./Registration/RegisterResident";
+import RegisterAccount from "./Registration/RegisterAccount";
+import ManageAccounts from "./Management/ManageAccounts";
+import ManageResidents from "./Management/ManageResidents";
+import Profile from "./Profile";
 
-import ManageUsers from './Pages/ManageUsers.jsx';
-
-/* EXPORT COMPONENTS */
-export { Admin, Home, Login, Personnel, System }
+export {
+  Home,
+  Dashboard,
+  Registration,
+  Management,
+  Notifications,
+  Help,
+  Settings,
+  RegisterResident,
+  RegisterAccount,
+  ManageAccounts,
+  ManageResidents,
+  Profile
+};

@@ -1,0 +1,9 @@
+html,
+body {
+    user-select: none;
+}
+
+#root {
+    display: flex;
+    height: 100vh;
+}
