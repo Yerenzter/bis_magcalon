@@ -13,28 +13,28 @@ export default function Sidenav() {
         <div className="divider my-5"></div>
 
         <ul className="h-4/6">
-          <li className="mb-3">
+          <li className="mb-3 drawer-item">
             <Link to="/dashboard" className="text-white flex text-3xl">
               <i className="material-icons">dashboard</i>
               &nbsp; Dashboard
             </Link>
           </li>
 
-          <li className="mb-3">
+          <li className="mb-3 drawer-item">
             <Link to="/registration" className="text-white flex text-3xl">
               <i className="material-icons">assignment</i>
               &nbsp; Registration
             </Link>
           </li>
 
-          <li className="mb-3">
+          <li className="mb-3 drawer-item">
             <Link to="/management" className="text-white flex text-3xl">
               <i className="material-icons">manage_accounts</i>
               &nbsp; Management
             </Link>
           </li>
 
-          <li className="mb-3">
+          <li className="mb-3 drawer-item hidden">
             <Link to="/notifications" className="text-white flex text-3xl">
               <i className="material-icons">notifications</i>
               &nbsp; Notifications

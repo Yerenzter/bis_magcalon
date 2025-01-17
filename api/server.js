@@ -123,7 +123,9 @@ server.post("/transactions/post", async (req, res) => {
 
 // GET METHOD
 server.get("/accounts/order/id", async (req, res) => {
-  const data = await db.pool.query("SELECT * FROM accounts WHERE role='Admin' or role='Personnel'");
+  const data = await db.pool.query(
+    "SELECT * FROM accounts WHERE role='Admin' or role='Personnel'"
+  );
   res.send(data);
 });
 
@@ -144,12 +146,19 @@ server.get("/residents/order/id", async (req, res) => {
 
 server.get("/residents/profile/:id", async (req, res) => {
   let task = req.params;
-  let data = await db.pool.query("SELECT * FROM residents WHERE id=?", [task.id]);
+  let data = await db.pool.query("SELECT * FROM residents WHERE id=?", [
+    task.id,
+  ]);
+  res.send(data);
+});
+
+server.get("/residents/population", async (req, res) => {
+  let data = await db.pool.query("SELECT * FROM residents");
   res.send(data);
 });
 
 server.get("/transactions", async (req, res) => {
-  const data = await db.pool.querssy("SELECT * FROM transactions");
+  const data = await db.pool.query("SELECT * FROM transactions");
   res.send(data);
 });
 

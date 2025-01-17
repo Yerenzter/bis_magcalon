@@ -19,7 +19,7 @@ export default async function AddResident(e) {
     firstname: e.target.firstname.value,
     middlename: e.target.middlename.value,
     lastname: e.target.lastname.value,
-    age: e.target.age.value,
+    age: 0,
     sex: e.target.sex.value,
     birthday: `${e.target.year.value}${e.target.month.value}${e.target.day.value}`,
     civilstatus: e.target.civilstatus.value,

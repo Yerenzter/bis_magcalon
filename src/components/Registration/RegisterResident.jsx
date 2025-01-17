@@ -11,6 +11,41 @@ export default function RegisterResident() {
     MInit();
   }, []);
 
+  let occupations = [
+    "Accountant",
+    "Actor/Actress",
+    "Architect",
+    "Artist",
+    "Banker",
+    "Carpenter",
+    "Cashier",
+    "Chef",
+    "Dancer",
+    "Doctor",
+    "Driver",
+    "Electrician",
+    "Engineer",
+    "Farmer",
+    "Fisherman",
+    "Housewife",
+    "Manager",
+    "Model",
+    "Nurse",
+    "OFW",
+    "Pilot",
+    "Police Officer",
+    "Programmer",
+    "Retailer",
+    "Seafarer",
+    "Security Guard",
+    "Soldier",
+    "Stewardress",
+    "Student",
+    "Teacher",
+    "Vendor",
+    "Others",
+  ];
+
   const MInit = async () => {
     M.Dropdown.init(document.querySelectorAll(".select-reg-data"));
   };
@@ -73,13 +108,12 @@ export default function RegisterResident() {
               </label>
             </div>
 
-            <div className="col s6 m2 input-field outlined">
+            <div className="col s6 m2 input-field outlined hidden">
               <input
                 id="addAge"
                 className="registerForm rfr"
                 name="age"
                 placeholder="Age"
-                required
                 maxLength={3}
               />
               <label htmlFor="addAge">
@@ -88,7 +122,7 @@ export default function RegisterResident() {
             </div>
 
             <div
-              className="col s6 m2 input-field outlined dropdown-trigger select-reg-data"
+              className="col s6 m4 input-field outlined dropdown-trigger select-reg-data"
               data-target="selectSex"
             >
               <input
@@ -113,7 +147,7 @@ export default function RegisterResident() {
               </ul>
             </div>
 
-            <div className="col s12 m4 row">
+            <div className="col s12 m4 row gap-1">
               <div
                 className="col s4 m4 input-field outlined dropdown trigger select-reg-data"
                 data-target="selectMonth"
@@ -297,7 +331,10 @@ export default function RegisterResident() {
               </ul>
             </div>
 
-            <div className="col s12 m4 input-field outlined">
+            <div
+              className="col s12 m4 input-field outlined dropdown-trigger select-reg-data"
+              data-target="selectOccupation"
+            >
               <input
                 id="addOccupation"
                 className="registerForm"
@@ -305,10 +342,27 @@ export default function RegisterResident() {
                 placeholder="Occupation"
                 required
                 maxLength={32}
+                readOnly
               />
               <label htmlFor="addOccupation">
                 <span className="text-green-700">Occupation*</span>
               </label>
+
+              <ul id="selectOccupation" className="dropdown-content">
+                <Loop repeat={occupations.length}>
+                  {(index) => (
+                    <li
+                      onClick={() =>
+                        (document.querySelector("#addOccupation").value =
+                          occupations[index])
+                      }
+                      key={index}
+                    >
+                      <a href="#">{occupations[index]}</a>
+                    </li>
+                  )}
+                </Loop>
+              </ul>
             </div>
 
             <div className="col s6 m4 input-field outlined">
@@ -325,7 +379,7 @@ export default function RegisterResident() {
             </div>
 
             <legend className="text-green-700 opacity-50 text-left col s12 p-0 m-0">
-              <small>Label marked by (*) are required to fill.</small>
+              <small>Label marked by (*) are require to fill.</small>
             </legend>
 
             <div id="socials" className="col s12 m12 row text-green-700 gap-0">

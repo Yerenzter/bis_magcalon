@@ -1,6 +1,9 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import {
+  About,
+  Appearance,
   Dashboard,
+  Feedback,
   Help,
   Home,
   ManageAccounts,
@@ -35,7 +38,10 @@ export default function App() {
           />
           <Route path="management/accounts" element={<ManageAccounts />} />
           <Route path="help" element={<Help />} />
+          <Route path="help/about" element={<About/>} />
+          <Route path="help/feedback" element={<Feedback/>}/>
           <Route path="settings" element={<Settings />} />
+          <Route path="settings/themes" element={<Appearance />}/>
         </Route>
       </Routes>
     </BrowserRouter>

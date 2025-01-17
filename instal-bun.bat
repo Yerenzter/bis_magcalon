@@ -1,0 +1,1 @@
+@powershell -c "irm https://bun.sh/install.ps1 | iex"

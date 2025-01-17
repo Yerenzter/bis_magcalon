@@ -1,0 +1,1 @@
+@bun run vite -- dev | start chrome http://localhost:5173
