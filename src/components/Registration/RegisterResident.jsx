@@ -383,7 +383,7 @@ export default function RegisterResident() {
             </legend>
 
             <div id="socials" className="col s12 m12 row text-green-700 gap-0">
-              <span className="text-3xl col s12">Social links (optional)</span>
+              <span className="text-3xl col s12">Register multiple residents at the same time?</span>
 
               <div className="divider my-3 col s12"></div>
 
@@ -391,10 +391,9 @@ export default function RegisterResident() {
                 <button
                   className="btn bg-green-500 waves-effect text-white"
                   type="button"
-                  onClick={AddLink}
                 >
-                  <i className="material-icons">add</i>
-                  Add link
+                  <i className="material-icons mr-3">checklist</i>
+                  Try Bulk Registration
                 </button>
               </div>
             </div>
@@ -403,7 +402,7 @@ export default function RegisterResident() {
           <div className="col s12 my-5 flex justify-items-end text-white gap-3 fixed bottom-0 right-0 me-5">
             <Link onClick={() => history.back()}>
               <button
-                className="btn bg-green-500 waves-effect"
+                className="btn bg-gray-500 waves-effect"
                 onClick={ClearForm}
               >
                 Cancel
@@ -411,7 +410,7 @@ export default function RegisterResident() {
             </Link>
 
             <button
-              className="btn bg-green-500 waves-effect"
+              className="btn bg-red-500 waves-effect"
               type="button"
               onClick={ClearForm}
             >

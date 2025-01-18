@@ -41,14 +41,14 @@ export default function ManageResidents() {
   };
 
   return (
-    <div className="w-4/5 row p-5 h-max absolute right-0">
-      <div className="col s12">
+    <div className="w-4/5 row p-5 h-max absolute right-0 z-20">
+      <div className="col s12 sticky top-1">
         <span className="text-6xl text-green-700">Manage Residents</span>
       </div>
 
-      <div className="divider my-3 col s12"></div>
+      <div className="divider my-3 col s12 sticky top-24 z-20"></div>
 
-      <div className="col s12 flex justify-end gap-3">
+      <div className="col s12 flex justify-end gap-3 sticky top-1 z-50">
         <div className="col s9 m3 input-field outlined">
           <input
             id="searchResidents"
@@ -59,48 +59,50 @@ export default function ManageResidents() {
         </div>
       </div>
 
-      <div className="col s12 row">
-        <Loop repeat={data.length}>
-          {(index) => (
-            <div key={index} className="col s12 m3">
-              <div className="card">
-                <div className="card-content">
-                  <div className="card-header text-center">
-                    <big className="text-6xl material-icons text-green-700">
-                      person
-                    </big>
-                  </div>
-                  <div className="card-body text-center">
-                    <strong className="text-green-700 truncate">
-                      <big>
-                        {data[index].lastname},&nbsp;{data[index].firstname}
-                        &nbsp;
-                        {data[index].middlename[0]}.
+      <div className="col s12 row z-0 relative">
+        {(
+          <Loop repeat={data.length}>
+            {(index) => (
+              <div key={index} className="col s12 m3 pop">
+                <div className="card">
+                  <div className="card-content">
+                    <div className="card-header text-center">
+                      <big className="text-6xl material-icons text-green-700">
+                        person
                       </big>
-                    </strong>
-                    <br />
-                    <small>{data[index].occupation}</small>
-                  </div>
+                    </div>
+                    <div className="card-body text-center">
+                      <strong className="text-green-700 truncate">
+                        <big>
+                          {data[index].lastname},&nbsp;{data[index].firstname}
+                          &nbsp;
+                          {data[index].middlename[0]}.
+                        </big>
+                      </strong>
+                      <br />
+                      <small>{data[index].occupation}</small>
+                    </div>
 
-                  <div className="divider my-3"></div>
+                    <div className="divider my-3"></div>
 
-                  <div className="card-footer flex justify-center">
-                    <Link
-                      to={"/management/residents/profile/" + data[index].id}
-                    >
-                      <button
-                        className="btn-flat"
-                        onClick={() => SetResidentId(data[index].id)}
+                    <div className="card-footer flex justify-center">
+                      <Link
+                        to={"/management/residents/profile/" + data[index].id}
                       >
-                        <span className="textgreen-700">VIEW PROFILE</span>
-                      </button>
-                    </Link>
+                        <button
+                          className="btn-flat"
+                          onClick={() => SetResidentId(data[index].id)}
+                        >
+                          <span className="textgreen-700">VIEW PROFILE</span>
+                        </button>
+                      </Link>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          )}
-        </Loop>
+            )}
+          </Loop>
+        ) || <h1>Loading...</h1>}
       </div>
     </div>
   );

@@ -3,7 +3,7 @@ import { Link, Outlet } from "react-router-dom";
 export default function Sidenav() {
   return (
     <>
-      <div className="w-1/5 bg-green-500 text-white p-3 fixed top-0 bottom-0 z-50">
+      <div className="w-1/5 bg-green-500 text-white p-3 fixed top-0 bottom-0 z-50 hide-on-small-only">
         <div className="text-left py-5">
           <h1 className="text-3xl">
             <i className="material-icons">person</i>

@@ -111,6 +111,15 @@ server.post("/residents/profile", async (req, res) => {
   res.send(data);
 });
 
+server.post("/residents/occupation/search", async (req, res) => {
+  const task = req.body;
+  const data = await db.pool.query(
+    "SELECT * FROM residents WHERE occupation=?",
+    [`${task.occupation}`]
+  );
+  res.send(data);
+});
+
 server.post("/transactions/post", async (req, res) => {
   const task = req.body;
   const data = await db.pool.query(
@@ -154,6 +163,16 @@ server.get("/residents/profile/:id", async (req, res) => {
 
 server.get("/residents/population", async (req, res) => {
   let data = await db.pool.query("SELECT * FROM residents");
+  res.send(data);
+});
+
+server.get("/residents/population/male", async (req, res) => {
+  let data = await db.pool.query("SELECT * FROM residents WHERE sex='Male'");
+  res.send(data);
+});
+
+server.get("/residents/population/female", async (req, res) => {
+  let data = await db.pool.query("SELECT * FROM residents WHERE sex='Female'");
   res.send(data);
 });
 

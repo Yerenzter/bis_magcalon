@@ -98,7 +98,7 @@ export default function RegisterAccount() {
           <Link onClick={() => history.back()}>
             <button
               type="button"
-              className="btn bg-green-500 waves-effect"
+              className="btn bg-gray-500 waves-effect"
               onClick={ClearForm}
             >
               Cancel
@@ -106,7 +106,7 @@ export default function RegisterAccount() {
           </Link>
           <button
             type="button"
-            className="btn bg-green-500 waves-effect"
+            className="btn bg-red-500 waves-effect"
             onClick={ClearForm}
           >
             Clear
