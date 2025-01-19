@@ -121,7 +121,7 @@ export default function Profile({ ideal }) {
                 </label>
               </div>
 
-              <div className="col s6 m2 input-field ">
+              <div className="col s6 m2 input-field hidden">
                 <input
                   id="editAge"
                   className="registerForm rfr profile"
@@ -137,7 +137,7 @@ export default function Profile({ ideal }) {
               </div>
 
               <div
-                className="col s6 m2 input-field dropdown-trigger !select-reg-data"
+                className="col s6 m4 input-field dropdown-trigger !select-reg-data"
                 data-target="selectSex"
               >
                 <input
@@ -162,7 +162,7 @@ export default function Profile({ ideal }) {
                 </ul>
               </div>
 
-              <div className="col s12 m4 row">
+              <div className="col s12 m4 row g-1">
                 <div
                   className="col s4 m4 input-field  dropdown trigger !select-reg-data"
                   data-target="selectMonth"

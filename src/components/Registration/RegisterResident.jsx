@@ -383,18 +383,22 @@ export default function RegisterResident() {
             </legend>
 
             <div id="socials" className="col s12 m12 row text-green-700 gap-0">
-              <span className="text-3xl col s12">Register multiple residents at the same time?</span>
+              <span className="text-3xl col s12">
+                Register multiple residents at the same time?
+              </span>
 
               <div className="divider my-3 col s12"></div>
 
               <div id="addLink" className="col s12">
-                <button
-                  className="btn bg-green-500 waves-effect text-white"
-                  type="button"
-                >
-                  <i className="material-icons mr-3">checklist</i>
-                  Try Bulk Registration
-                </button>
+                <Link to="/registration/resident/bulk">
+                  <button
+                    className="btn bg-green-500 waves-effect text-white"
+                    type="button"
+                  >
+                    <i className="material-icons mr-3">checklist</i>
+                    Try Bulk Registration
+                  </button>
+                </Link>
               </div>
             </div>
           </div>

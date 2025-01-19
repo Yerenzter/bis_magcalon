@@ -3,13 +3,14 @@ import { useEffect, useRef, useState } from "react";
 import { Doughnut } from "react-chartjs-2";
 import { occupationDataMode, occupationDataName } from "../data/Occupation";
 
-
 // Empty lists.
 let x = [];
 let x1 = [];
 let y = [];
 let yy = [];
 let z = [];
+let xRanked = [];
+let yRanked = [];
 let y1 = null;
 let y2 = null;
 
@@ -50,16 +51,24 @@ setTimeout(() => {
       z.push({ name: y2[r], quantity: x1[r] });
     }
   }
+
+  for (let r = 0; r < 5; r++) {
+    yRanked.push(z[r].name);
+  }
+
+  for (let r = 0; r < 5; r++) {
+    xRanked.push(z[r].quantity);
+  }
 }, 1000);
 
 export default function ChartOccupation() {
   let ref = useRef();
   let data = {
-    labels: y2,
+    labels: yRanked,
     datasets: [
       {
         label: "People",
-        data: x,
+        data: xRanked,
         backgroundColor: [
           "#14532D",
           "#15803D",
@@ -75,7 +84,7 @@ export default function ChartOccupation() {
   let options = {
     plugins: {
       title: {
-        display: true,
+        display: true,  
         text: "5 Most Selected Professions",
         color: "#14532D",
       },

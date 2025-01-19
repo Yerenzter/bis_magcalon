@@ -8,6 +8,7 @@ import Notifications from "./Notifications";
 import Help from "./Help";
 import Settings from "./Settings";
 import RegisterResident from "./Registration/RegisterResident";
+import RegisterResidentBulk from "./Registration/RegisterResidentBulk";
 import RegisterAccount from "./Registration/RegisterAccount";
 import ManageAccounts from "./Management/ManageAccounts";
 import ManageResidents from "./Management/ManageResidents";
@@ -26,6 +27,7 @@ export {
   Help,
   Settings,
   RegisterResident,
+  RegisterResidentBulk,
   RegisterAccount,
   ManageAccounts,
   ManageResidents,

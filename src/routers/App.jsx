@@ -13,6 +13,7 @@ import {
   Profile,
   RegisterAccount,
   RegisterResident,
+  RegisterResidentBulk,
   Registration,
   Settings,
 } from "../components";
@@ -34,15 +35,24 @@ export default function App() {
           <Route path="management/residents" element={<ManageResidents />} />
           <Route
             path="management/residents/profile/:id"
-              element={<Profile ideal={window.location.pathname.match(/[0-9]/)}/>}
+            element={
+              <Profile ideal={window.location.pathname.match(/[0-9]/)} />
+            }
           />
           <Route path="management/accounts" element={<ManageAccounts />} />
           <Route path="help" element={<Help />} />
-          <Route path="help/about" element={<About/>} />
-          <Route path="help/feedback" element={<Feedback/>}/>
+          <Route path="help/about" element={<About />} />
+          <Route path="help/feedback" element={<Feedback />} />
           <Route path="settings" element={<Settings />} />
-          <Route path="settings/themes" element={<Appearance />}/>
+          <Route path="settings/themes" element={<Appearance />} />
         </Route>
+      </Routes>
+
+      <Routes>
+        <Route
+          path="registration/resident/bulk"
+          element={<RegisterResidentBulk />}
+        />
       </Routes>
     </BrowserRouter>
   );
