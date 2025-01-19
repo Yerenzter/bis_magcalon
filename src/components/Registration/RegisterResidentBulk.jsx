@@ -60,7 +60,7 @@ export default function RegisterResidentBulk() {
           <div className="bulkBox input-field">
             <input
               type="text"
-              className="bulkFirstname"
+              className="bulkFirstname registerForm"
               name="bulkFirstname"
               placeholder="Firstname"
             />
@@ -69,7 +69,7 @@ export default function RegisterResidentBulk() {
           <div className="bulkBox input-field">
             <input
               type="text"
-              className="bulkMiddlename"
+              className="bulkMiddlename registerForm"
               name="bulkMiddlename"
               placeholder="Middlename"
             />
@@ -78,7 +78,7 @@ export default function RegisterResidentBulk() {
           <div className="bulkBox input-field">
             <input
               type="text"
-              className="bulkLastname"
+              className="bulkLastname registerForm"
               name="bulkLastname"
               placeholder="Lastname"
             />
@@ -90,7 +90,7 @@ export default function RegisterResidentBulk() {
           >
             <input
               type="text"
-              className="bulkSex"
+              className="bulkSex registerForm"
               name="bulkSex"
               placeholder="Sex"
               readOnly
@@ -109,21 +109,21 @@ export default function RegisterResidentBulk() {
           <div className="bulkBox input-field flex">
             <input
               type="text"
-              className="bulkMonth px-0"
+              className="bulkMonth px-0 registerForm"
               name="bulkMonth"
               placeholder="MM"
               maxLength={2}
             />
             <input
               type="text"
-              className="bulkDay px-0"
+              className="bulkDay px-0 registerForm"
               name="bulkDay"
               placeholder="DD"
               maxLength={2}
             />
             <input
               type="text"
-              className="bulkYears px-0"
+              className="bulkYears px-0 registerForm"
               name="bulkYear"
               placeholder="YYYY"
               maxLength={4}
@@ -136,7 +136,7 @@ export default function RegisterResidentBulk() {
           >
             <input
               type="text"
-              className="bulkCivilStatus"
+              className="bulkCivilStatus registerForm"
               name="bulkCivilStatus"
               placeholder="Civil Status"
               readOnly
@@ -164,7 +164,7 @@ export default function RegisterResidentBulk() {
           >
             <input
               type="text"
-              className="bulkPurok"
+              className="bulkPurok registerForm"
               name="bulkPurok"
               placeholder="Purok"
               readOnly
@@ -187,7 +187,7 @@ export default function RegisterResidentBulk() {
           >
             <input
               type="text"
-              className="bulkOccupation"
+              className="bulkOccupation registerForm"
               name="bulkOccupation"
               placeholder="Occupation"
               readOnly
@@ -213,11 +213,15 @@ export default function RegisterResidentBulk() {
           <div className="bulkBox input-field ">
             <input
               type="text"
-              className="bulkContactNumber"
+              className="bulkContactNumber registerForm"
               name="bulkContactNumber"
               placeholder="Contact #"
             />
           </div>
+        </div>
+
+        <div className="col s12 flex justify-center">
+          <button type="button" className="btn bg-green-500 text-white waves-effect">Add</button>
         </div>
       </div>
 
