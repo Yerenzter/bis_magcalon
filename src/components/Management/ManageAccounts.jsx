@@ -47,14 +47,15 @@ export default function ManageAccounts() {
       <EditAccount />
       <DeleteAccount />
 
-      <div className="w-4/5 row p-5 h-max absolute right-0">
-        <div className="col s12 sticky top-1 z-20">
-          <span className="text-6xl text-green-700">Manage Accounts</span>
+      <div className="w-4/5 row p-5 h-max absolute right-0 top-12">
+        <div className="col s12 row sticky top-16 z-20 bg-white">
+          <div className="col s12">
+            <span className="text-6xl text-green-700">Manage Accounts</span>
+          </div>
+          <div className="divider my-3 col s12"></div>
         </div>
 
-        <div className="divider my-3 col s12 sticky top-24 z-20"></div>
-
-        <div className="col s12 flex justify-end gap-3 sticky top-1 z-50">
+        <div className="col s12 flex justify-end gap-3 sticky top-20  z-50">
           <div className="col s9 m3 input-field outlined">
             <input
               id="searchAccounts"

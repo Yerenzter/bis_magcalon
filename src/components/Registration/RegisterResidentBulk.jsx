@@ -48,7 +48,7 @@ export default function RegisterResidentBulk() {
   ];
 
   return (
-    <div className="w-full row p-5 h-max absolute left-0 right-0 z-50 bg-white">
+    <div className="w-full row p-5 h-max absolute left-0 right-0 z-50 bg-white top-12">
       <div className="col s12">
         <span className="text-3xl text-green-700">Bulk registration</span>
       </div>

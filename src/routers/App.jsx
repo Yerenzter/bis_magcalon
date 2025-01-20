@@ -18,6 +18,7 @@ import {
   Settings,
 } from "../components";
 import Sidenav from "./Sidenav";
+import AppBar from "./AppBar";
 
 export default function App() {
   return (
@@ -25,7 +26,13 @@ export default function App() {
       <Routes>
         <Route index element={<Home />} />
 
-        <Route path="/" element={<Sidenav />}>
+        <Route path="/" element={<AppBar/>}>
+        <Route
+          path="/"
+          element={
+            <Sidenav/>
+          }
+        >
           <Route path="dashboard" element={<Dashboard />} />
           <Route path="registration" element={<Registration />} />
           <Route path="management" element={<Management />} />
@@ -45,6 +52,7 @@ export default function App() {
           <Route path="help/feedback" element={<Feedback />} />
           <Route path="settings" element={<Settings />} />
           <Route path="settings/themes" element={<Appearance />} />
+        </Route>
         </Route>
       </Routes>
 
