@@ -2,110 +2,70 @@ import SealLeft from "../assets/seal_san-jose.png";
 import SealRight from "../assets/seal_antique.png";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import Login from "./Actions/Login";
+import { M } from "../lib";
+
+// OOF!
 
 export default function Home() {
   useEffect(() => {
-    Authenticate();
+    MInit();
   }, []);
 
-  useEffect(() => {
-    MInit()
-  }, [])
-
-  const Authenticate = async () => {
-    const res = await axios.get("http://localhost:4435/accounts/login");
-    sendData(res.data);
-  };
-
-  const MInit = async() => {}
-
-
-  const [data, sendData] = useState({});
-
-  
-  const Authorize = (e) => {
-    e.preventDefault();
-
-    for (let r = 0; r < data.length; r++) {
-      while (
-        e.target.username.value === data[r].username &&
-        e.target.password.value === data[r].passphrase
-      ) {
-        if (
-          data[r].role === "System" ||
-          data[r].role === "Admin"
-        )
-          return (window.location.href = "/dashboard");
-
-        return (window.location.href = "/dashboard");
-      }
-    }
-
-    return alert("Wrong login information or account does not exist.");
+  const MInit = async () => {
+    await M.Modal.init(document.querySelectorAll(".login-dlg"));
   };
 
   return (
-    <div className="row bg-white">
-      <div className="col s12 m9 h-screen bg-green-500 p-5 grid justify-items-center items-start">
-        <h1 className="text-6xl text-center">
-          <strong>BRGY. MAGCALON INFORMATION SYSTEM</strong>
-        </h1>
-        <h2 className="text-2xl">
-          Brgy. Magcalon, San Jose de Buenavista , Antique 5700, Philippines
-        </h2>
+    <>
+      <Login />
 
-        <p className="text-3xl text-center">
-          Manage and tracks your residents&apos;s information with ease. Making
-          easier, convenient, more secure and reliable.
-        </p>
-
-        <p className="text-3xl text-center">
-          Please login first using your account given by your system
-          administrator to grant access the system.
-        </p>
-
-        <div className="flex w-full justify-around">
-          <div>
-            <img
-              src={SealLeft}
-              alt="san jose official seal"
-              width={120}
-              height={120}
-            />
+      <div className="row w-full">
+        <div className="col s12 bg-green-500">
+          <div className="col s12 grid grid-cols-3 justify-around p-3">
+            <center>
+              <img src={SealLeft} alt="seal_left" width={120} />
+            </center>
+            <div className="text-center">
+              <h1 className="text-4xl">REPUBLIC OF THE PHILIPPINES</h1>
+              <h2 className="text-4xl">PROVINCE OF ANTIQUE</h2>
+              <h3 className="text-2xl">
+                Municipality of San Jose de Buenavista
+              </h3>
+              <br />
+              <h2>Barangay Magcalon</h2>
+            </div>
+            <center>
+              <img src={SealRight} alt="seal_right" width={120} />
+            </center>
           </div>
-          <div>
-            <img
-              src={SealRight}
-              alt="antique official seal"
-              width={120}
-              height={120}
-            />
+
+          <div className="col s12 row mt-12 p-5">
+            <div className="col s12 m4"></div>
+            <div className="col s12 m4 text-justify">
+              <p>
+                Magcalon is a barangay in the municipality of San Jose de
+                Buenavista, in the province of Antique. Its population as
+                determined by the 2020 Census was 1,270. This represented 1.95%
+                of the total population of San Jose de Buenavista.
+              </p>
+            </div>
+          </div>
+
+          <div className="col s12 grid  justify-items-center g-2">
+            <h1>
+              <strong>LOGIN AS ADMIN OR RESIDENT</strong>
+            </h1>
+            <button
+              className="btn bg-green-300 text-white flex g-1 waves-effect modal-trigger"
+              data-target="login"
+            >
+              <span className="material-icons">login</span>
+              <span>LOGIN</span>
+            </button>
           </div>
         </div>
       </div>
-
-      <div className="col s12 m3 h-screen bg-white px-5 grid items-center">
-        <form onSubmit={Authorize}>
-          <div className="input-field outlined mb-3">
-            <input id="username" placeholder=" " />
-            <label htmlFor="username">Username</label>
-          </div>
-
-          <div className="input-field outlined">
-            <input id="password" type="password" placeholder=" " />
-            <label htmlFor="password">Password</label>
-          </div>
-
-          <div className="divider my-5"></div>
-
-          <button
-            className="btn waves-effect bg-green-500 w-full flex justify-center"
-            type="submit"
-          >
-            Login
-          </button>
-        </form>
-      </div>
-    </div>
+    </>
   );
 }
