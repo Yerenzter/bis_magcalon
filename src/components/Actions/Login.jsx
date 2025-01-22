@@ -26,6 +26,9 @@ export default function Login() {
         if (data[r].role === "System" || data[r].role === "Admin")
           return (window.location.href = "/dashboard");
 
+        if (data[r].role === "Client")
+          return (window.location.href = "/client");
+
         return (window.location.href = "/dashboard");
       }
     }
@@ -64,7 +67,7 @@ export default function Login() {
                 name="password"
                 placeholder=" "
               />
-              <label htmlFor="username">Password</label>
+              <label htmlFor="password">Password</label>
             </div>
 
             <button

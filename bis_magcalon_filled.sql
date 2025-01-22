@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 22, 2025 at 03:43 PM
+-- Generation Time: Jan 22, 2025 at 03:37 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -40,19 +40,13 @@ CREATE TABLE `accounts` (
 --
 
 INSERT INTO `accounts` (`id`, `username`, `passphrase`, `role`, `creation`) VALUES
-(1, 'system', 'system-wizard-secret123', 'System', '0000-00-00');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `announcements`
---
-
-CREATE TABLE `announcements` (
-  `id` int(100) NOT NULL,
-  `title` varchar(512) DEFAULT NULL,
-  `content` varchar(1024) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+(1, 'system', 'system-wizard-secret123', 'System', '0000-00-00'),
+(2, 'admin', 'admin', 'Admin', '0000-00-00'),
+(3, 'bulk-test1', 'bt1-123', 'Admin', '0000-00-00'),
+(4, 'bulk-test2', 'bt2-123', 'Admin', '0000-00-00'),
+(5, 'bulk-test3', 'bt3-123', 'Admin', '0000-00-00'),
+(6, 'yerenzter', 'yerenzter', 'Admin', '0000-00-00'),
+(7, 'wunderkatze_2024', 'n0w_u_c4n_s33_mein_hUh', 'Personnel', '0000-00-00');
 
 -- --------------------------------------------------------
 
@@ -76,6 +70,22 @@ CREATE TABLE `residents` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
+-- Dumping data for table `residents`
+--
+
+INSERT INTO `residents` (`id`, `firstname`, `middlename`, `lastname`, `age`, `sex`, `birthday`, `civilstatus`, `occupation`, `purok`, `contactnumber`, `information`) VALUES
+(1, 'Marc Joseff', 'Flores', 'Umiten', 0, 'Male', '2003-01-01', 'Single', 'Student', '1', '09943494324', '{\"name\":[],\"url\":[]}'),
+(2, 'Renzter', 'Arisga', 'Arizala', 0, 'Female', '2003-10-02', 'Single', 'Student', '1', '0987654321', '{\"name\":[],\"url\":[]}'),
+(3, 'John', 'Peter', 'Doe', 0, 'Male', '2000-05-29', 'Single', 'Pilot', '1', '09876543210', '{\"name\":[],\"url\":[]}'),
+(4, 'Princess Everly', 'Flores', 'Umiten', 0, 'Female', '2011-08-20', 'Single', 'Artist', '1', '09876543210', '{\"name\":[],\"url\":[]}'),
+(5, 'Pedro', 'Pedro', 'Pedro', 0, 'Male', '1999-04-04', 'Single', 'Artist', '1', '09876543210', '{\"name\":[],\"url\":[]}'),
+(6, 'Tyron', 'Haust', 'Baffen', 0, 'Male', '1980-06-24', 'Single', 'Architect', '1', '09876543210', '{\"name\":[],\"url\":[]}'),
+(7, 'Dessmark', 'Pajate', 'Napuli', 0, 'Male', '2004-01-11', 'Single', 'Student', '1', '09876543210', '{\"name\":[],\"url\":[]}'),
+(8, 'Mark Dominick', 'Flores', 'Umiten', 0, 'Male', '2004-11-19', 'Single', 'Engineer', '1', '09876543210', '{\"name\":[],\"url\":[]}'),
+(9, 'Pablo', 'Paulo', 'Paulante', 0, 'Male', '1989-08-24', 'Married', 'Retailer', '5', '09876543210', '{\"name\":[],\"url\":[]}'),
+(10, 'Juan', 'Carlos', 'dela Cruz', 0, 'Male', '1994-09-17', 'Widowed', 'Retailer', '7', '09876543210', '{\"name\":[],\"url\":[]}');
+
+--
 -- Indexes for dumped tables
 --
 
@@ -83,12 +93,6 @@ CREATE TABLE `residents` (
 -- Indexes for table `accounts`
 --
 ALTER TABLE `accounts`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `announcements`
---
-ALTER TABLE `announcements`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -105,19 +109,13 @@ ALTER TABLE `residents`
 -- AUTO_INCREMENT for table `accounts`
 --
 ALTER TABLE `accounts`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
--- AUTO_INCREMENT for table `announcements`
---
-ALTER TABLE `announcements`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `residents`
 --
 ALTER TABLE `residents`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

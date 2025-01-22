@@ -1,6 +1,7 @@
 import Home from "./Home";
 import About from "./Help/About";
 import Appearance from "./Settings/Appearance";
+import Client from "./Client";
 import Dashboard from "./Dashboard";
 import Registration from "./Registration";
 import Management from "./Management";
@@ -12,12 +13,16 @@ import RegisterResidentBulk from "./Registration/RegisterResidentBulk";
 import RegisterAccount from "./Registration/RegisterAccount";
 import ManageAccounts from "./Management/ManageAccounts";
 import ManageResidents from "./Management/ManageResidents";
+import ManageFeeds from "./Management/ManageFeeds";
 import Profile from "./Profile";
 import Feedback from "./Help/Feedback";
+import Requests from "./Requests";
+import Feed from "./Feed";
 
 export {
   About,
   Appearance,
+  Client,
   Home,
   Dashboard,
   Feedback,
@@ -31,5 +36,8 @@ export {
   RegisterAccount,
   ManageAccounts,
   ManageResidents,
+  ManageFeeds,
   Profile,
+  Requests,
+  Feed,
 };

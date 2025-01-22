@@ -62,7 +62,7 @@ server.post("/notifications/post", async (req, res) => {
 server.post("/residents/post", async (req, res) => {
   const task = req.body;
   const data = await db.pool.query(
-    "INSERT INTO residents VALUES(id, ?,?,?,?,?,?,?,?,?,?, ?)",
+    "INSERT INTO residents VALUES(id, ?,?,?,?,?,?,?,?,?,?,?)",
     [
       task.firstname,
       task.middlename,
@@ -132,6 +132,16 @@ server.post("/transactions/post", async (req, res) => {
   console.log(data);
 });
 
+server.post("/feed/post", async (req, res) => {
+  const task = req.body;
+  const data = await db.pool.query(
+    "INSERT INTO announcements(title, content) VALUES(?, ?)",
+    [task.title, task.content]
+  );
+
+  console.log(data);
+});
+
 // GET METHOD
 server.get("/accounts/order/id", async (req, res) => {
   const data = await db.pool.query(
@@ -183,6 +193,11 @@ server.get("/transactions", async (req, res) => {
   res.send(data);
 });
 
+server.get("/feeds", async (req, res) => {
+  const data = await db.pool.query("SELECT * FROM announcements");
+  res.send(data);
+});
+
 // PUT METHOD
 server.put("/accounts/edit", async (req, res) => {
   const task = req.body;
@@ -228,18 +243,17 @@ server.put("/residents/edit", async (req, res) => {
 
 // DELETE METHOD
 
-
 //PDF CREATION
 server.post("/document/create/clearance", async (req, res) => {
   const task = req.body;
   res.send(GenerateClearance(task.fullname, task.age, task.sex));
-  console.log(task.fullname, task.age, task.sex)
+  console.log(task.fullname, task.age, task.sex);
 });
 
 server.post("/document/create/indigency", async (req, res) => {
   const task = req.body;
   res.send(GenerateIndigency(task.fullname));
-  console.log(task.fullname)
+  console.log(task.fullname);
 });
 
 // SERVER LISTEN

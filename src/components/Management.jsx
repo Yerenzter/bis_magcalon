@@ -45,6 +45,22 @@ export default function Management() {
             </div>
           </Link>
         </div>
+
+        <div className="col s12 m5">
+          <Link to="/management/feeds">
+            <div className="card pop">
+              <div className="card-content">
+                <div className="card-body text-center">
+                  <i className="material-icons text-green-700 text-6xl">
+                    announcement
+                  </i>
+                  <br />
+                  <strong className="text-3xl text-green-700">Feeds</strong>
+                </div>
+              </div>
+            </div>
+          </Link>
+        </div>
       </div>
     </div>
   );

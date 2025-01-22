@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import Login from "./Actions/Login";
 import { M } from "../lib";
+import Signup from "./Actions/Signup";
 
 // OOF!
 
@@ -18,6 +19,7 @@ export default function Home() {
 
   return (
     <>
+      <Signup />  
       <Login />
 
       <div className="row w-full">
@@ -53,16 +55,26 @@ export default function Home() {
           </div>
 
           <div className="col s12 grid  justify-items-center g-2">
-            <h1>
-              <strong>LOGIN AS ADMIN OR RESIDENT</strong>
-            </h1>
-            <button
-              className="btn bg-green-300 text-white flex g-1 waves-effect modal-trigger"
-              data-target="login"
-            >
-              <span className="material-icons">login</span>
-              <span>LOGIN</span>
-            </button>
+            <span className="text-white">
+              Create and account to join, if your account exist just login.
+            </span>
+            <div className="grid g-1">
+              <button
+                className="btn bg-green-300 text-white flex g-1 waves-effect modal-trigger"
+                data-target="signup"
+              >
+                <span className="material-icons">login</span>
+                <span>SIGN UP</span>
+              </button>
+
+              <button
+                className="btn bg-green-600 text-black flex g-1 waves-effect modal-trigger"
+                data-target="login"
+              >
+                <span className="material-icons">login</span>
+                <span>SIGN IN</span>
+              </button>
+            </div>
           </div>
         </div>
       </div>

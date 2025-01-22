@@ -228,8 +228,8 @@ export default function RegisterResident() {
                       <li
                         key={index}
                         onClick={() =>
-                        (addDay.value =
-                          index + 1 <= 9 ? `0${index + 1}` : index + 1)
+                          (addDay.value =
+                            index + 1 <= 9 ? `0${index + 1}` : index + 1)
                         }
                       >
                         <a href="#">
@@ -355,8 +355,8 @@ export default function RegisterResident() {
                   {(index) => (
                     <li
                       onClick={() =>
-                      (document.querySelector("#addOccupation").value =
-                        occupations[index])
+                        (document.querySelector("#addOccupation").value =
+                          occupations[index])
                       }
                       key={index}
                     >
@@ -423,15 +423,12 @@ export default function RegisterResident() {
               Clear
             </button>
 
-            <Link to="/management/residents">
-              <button type="submit" className="btn bg-green-500 waves-effect">
-                Done
-              </button>
-            </Link>
+            <button type="submit" className="btn bg-green-500 waves-effect">
+              Done
+            </button>
           </div>
         </form>
       </div>
     </div>
   );
 }
-
