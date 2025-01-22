@@ -4,6 +4,8 @@ import AddAccount from "../Actions/AddAccount";
 import { ClearForm } from "../Actions/ClearForm";
 import { Link } from "react-router-dom";
 
+// COMMITED NA!
+
 export default function RegisterAccount() {
   useEffect(() => {
     MInit();

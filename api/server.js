@@ -2,6 +2,8 @@ import express from "express";
 import cors from "cors";
 import bodyParser from "body-parser";
 import db from "./db";
+import GenerateIndigency from "./docs/Indigency";
+import GenerateClearance from "./docs/Clearance";
 
 const server = express();
 const host = Bun.env.SERVER_HOST;
@@ -225,6 +227,20 @@ server.put("/residents/edit", async (req, res) => {
 });
 
 // DELETE METHOD
+
+
+//PDF CREATION
+server.post("/document/create/clearance", async (req, res) => {
+  const task = req.body;
+  res.send(GenerateClearance(task.fullname, task.age, task.sex));
+  console.log(task.fullname, task.age, task.sex)
+});
+
+server.post("/document/create/indigency", async (req, res) => {
+  const task = req.body;
+  res.send(GenerateIndigency(task.fullname));
+  console.log(task.fullname)
+});
 
 // SERVER LISTEN
 server.listen(port, () =>

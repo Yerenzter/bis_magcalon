@@ -1,13 +1,13 @@
 import { Link, Outlet } from "react-router-dom";
 
+// COMMITED NA!
+
 export default function Sidenav() {
   return (
     <>
-      <div className="w-1/5 bg-green-500 text-white p-3 fixed top-12 bottom-0 z-50 hide-on-small-only z-40 ">
+      <div className="w-1/5 bg-green-500 text-white p-3 fixed top-12 bottom-0 z-40 hide-on-small-only z-40 ">
         <div className="text-left py-5">
           <h1 className="text-3xl">
-            <i className="material-icons">person</i>
-            &nbsp; Hi, Admin!
           </h1>
         </div>
         <div className="divider my-5"></div>

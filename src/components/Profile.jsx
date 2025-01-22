@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 import { Loop, Message, Tick } from "../lib";
 import AddResident from "./Actions/AddResident";
 
+// COMMITED NA!
+
 import { AddLink } from "./Registration/Actions/AddLink";
 import { ClearForm } from "./Actions/ClearForm";
 import axios from "axios";
@@ -41,15 +43,37 @@ export default function Profile({ ideal }) {
     sendData(res.data);
   };
 
+  const CreateClearance = async()=> {
+    for(let r=0; r < data.length; r++) {
+      let info = {
+        fullname: `${data[r].firstname} ${data[r].middlename} ${data[r].lastname}`,
+        age: data[r].age,
+        sex: data[r].sex
+      }
+
+      await axios.post("http://localhost:4435/document/create/clearance", info);
+    }
+  }
+
+  const CreateIndigency = async()=> {
+    for(let r=0; r < data.length; r++) {
+      let info = {
+        fullname: `${data[r].firstname} ${data[r].middlename} ${data[r].lastname}`
+      }
+
+      await axios.post("http://localhost:4435/document/create/indigency", info);
+    }
+  }
+
   for (let r = 0; r < data.length; r++) {
     editFirstname.value = data[r].firstname;
     editMiddlename.value = data[r].middlename;
     editLastname.value = data[r].lastname;
     editAge.value = data[r].age;
     editSex.value = data[r].sex;
-    editMonth.value = Number(`${data[r].birthday[5]}${data[r].birthday[6]}`)+1 >= 12 ? `0${Number(`${data[r].birthday[5]}${data[r].birthday[6]}`)-11}` : Number(`${data[r].birthday[5]}${data[r].birthday[6]}`)+1;
-    editDay.value = Number(`${data[r].birthday[8]}${data[r].birthday[9]}`)+1 >= 31 ? `0${Number(`${data[r].birthday[8]}${data[r].birthday[9]}`)-30}` : Number(`${data[r].birthday[8]}${data[r].birthday[9]}`)+1;
-    editYear.value = Number(`${data[r].birthday[0]}${data[r].birthday[1]}${data[r].birthday[2]}${data[r].birthday[3]}`)+1;
+    editMonth.value = Number(`${data[r].birthday[5]}${data[r].birthday[6]}`) + 1 >= 12 ? `0${Number(`${data[r].birthday[5]}${data[r].birthday[6]}`) - 11}` : Number(`${data[r].birthday[5]}${data[r].birthday[6]}`) + 1;
+    editDay.value = Number(`${data[r].birthday[8]}${data[r].birthday[9]}`) + 1 >= 31 ? `0${Number(`${data[r].birthday[8]}${data[r].birthday[9]}`) - 30}` : Number(`${data[r].birthday[8]}${data[r].birthday[9]}`) + 1;
+    editYear.value = Number(`${data[r].birthday[0]}${data[r].birthday[1]}${data[r].birthday[2]}${data[r].birthday[3]}`) + 1;
     editCivilStatus.value = data[r].civilstatus;
     editPurok.value = data[r].purok;
     editOccupation.value = data[r].occupation;
@@ -241,8 +265,8 @@ export default function Profile({ ideal }) {
                         <li
                           key={index}
                           onClick={() =>
-                            (editDay.value =
-                              index + 1 <= 9 ? `0${index + 1}` : index + 1)
+                          (editDay.value =
+                            index + 1 <= 9 ? `0${index + 1}` : index + 1)
                           }
                         >
                           <a href="#">
@@ -401,6 +425,25 @@ export default function Profile({ ideal }) {
             </div>
 
             <div className="col s12 my-5 flex justify-items-end text-white gap-3 fixed bottom-0 right-0 me-5">
+              <div>
+                <button
+                  type="button"
+                  className="btn bg-green-500 waves-effect"
+                  onClick={CreateClearance}
+                >
+                  Create Clearance
+                </button>
+              </div>
+
+              <div>
+                <button
+                  type="button"
+                  className="btn bg-green-500 waves-effect"
+                  onClick={CreateIndigency}
+                >
+                  Create Indigency
+                </button>
+              </div>
               <Link onClick={() => history.back()}>
                 <button
                   className="btn bg-green-500 waves-effect"
@@ -424,7 +467,7 @@ export default function Profile({ ideal }) {
                 type="button"
                 onClick={() => {
                   for (let r = 0; r < data.length; r++) {
-                    SetResidentIdToDelete (
+                    SetResidentIdToDelete(
                       data[r].id,
                       `${data[r].firstname} ${data[r].lastname}`
                     );
